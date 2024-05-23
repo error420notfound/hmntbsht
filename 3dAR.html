@@ -19,8 +19,8 @@
     <div class="imgbox">
         <model-viewer 
 		poster="https://error420notfound.github.io/hmntbsht/untitled.3.png"
-            src="https://error420notfound.github.io/hmntbsht/hmntbsht%202.1%20.glb.glb"
-            ios-src="https://error420notfound.github.io/hmntbsht/hmntbsht%202.1%20.glb.usdz?raw=true"
+            src="https://error420notfound.github.io/hmntbsht/hmntbsht%202.1%20.glb"
+           ar-modes="scene-viewer webxr quick-look" ios-src="https://error420notfound.github.io/hmntbsht/hmntbsht%202.1%20.usdz?raw=true"
             alt="A 3D model"
                       interaction-prompt="none"  
                       interpolation-decay="100"
@@ -29,7 +29,7 @@
             disable-zoom 
             disable-tap 
             shadow-intensity="1"
-            camera-orbit="180deg 90deg 4m"
+            camera-orbit="0deg 90deg 2m"
             ar
             reveal="auto" 
             loading="lazy"
@@ -42,16 +42,17 @@
         (() => {
             const modelViewer = document.querySelector('#orbit-demo');
             const orbitCycle = [
-                '160deg 90deg 2m',
-                '180deg 90deg 2m',
-                '200deg 90deg 1m',
+          
+                '-30deg 90deg 2m',
+                '0deg 90deg 2m',
+                '30deg 90deg 2m',
                 modelViewer.cameraOrbit
             ];
 
             setInterval(() => {
                 const currentOrbitIndex = orbitCycle.indexOf(modelViewer.cameraOrbit);
                 modelViewer.cameraOrbit = orbitCycle[(currentOrbitIndex + 1) % orbitCycle.length];
-            }, 2545);
+            }, 2000);
         })();
     </script>
 </body>
